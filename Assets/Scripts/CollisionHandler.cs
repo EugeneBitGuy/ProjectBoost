@@ -68,6 +68,7 @@ public class CollisionHandler : MonoBehaviour
 
     private void ProcessTransitioning()
     {
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         _isTransitioning = true;
         _audioSource.Stop();
         _audioSource.volume = .5f;

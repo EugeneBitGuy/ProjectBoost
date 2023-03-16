@@ -47,12 +47,12 @@ public class Mover : MonoBehaviour
     
     void ProcessRotation()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             ApplyRotation(rotationValue);
             SpawnRightBoosterParticles();
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             ApplyRotation(-rotationValue);
             SpawnLeftBoosterParticles();
