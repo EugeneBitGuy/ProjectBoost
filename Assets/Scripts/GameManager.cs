@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace DefaultNamespace
 {
@@ -8,6 +9,8 @@ namespace DefaultNamespace
         public static GameManager Instance = null;
 
         public UIManager uiManager;
+
+        [SerializeField] private AudioMixer audioMixer;
 
         private int _gameManagerLevelSp = 0;
         private int _gameManagerGameSp = 0;
@@ -42,8 +45,11 @@ namespace DefaultNamespace
                 GameSp = PlayerPrefs.GetInt("GameSp");
             if (PlayerPrefs.HasKey("LevelSp"))
                 LevelSp = PlayerPrefs.GetInt("LevelSp");
+            if (PlayerPrefs.HasKey("MusicVolume"))
+                audioMixer.SetFloat("MusicValue", PlayerPrefs.GetFloat("MusicVolume"));
+            if (PlayerPrefs.HasKey("SfxVolume"))
+                audioMixer.SetFloat("SfxValue", PlayerPrefs.GetFloat("SfxVolume"));
             
-            uiManager.UpdateUI();
         }
 
         private void OnApplicationQuit()

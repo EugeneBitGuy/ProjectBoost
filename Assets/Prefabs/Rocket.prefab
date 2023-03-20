@@ -20257,10 +20257,12 @@ GameObject:
   - component: {fileID: 1148379891194522573}
   - component: {fileID: 4354455124517985558}
   - component: {fileID: 6839757934117504535}
-  - component: {fileID: 219375973095874382}
   - component: {fileID: 555574448}
-  - component: {fileID: 555574455}
   - component: {fileID: 5564339534184456869}
+  - component: {fileID: 1109803981894459478}
+  - component: {fileID: 6167032390003711458}
+  - component: {fileID: 460303288958450350}
+  - component: {fileID: 3798337048093755367}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Player
@@ -20371,25 +20373,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 56
   m_CollisionDetection: 0
---- !u!114 &219375973095874382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6419463909349746538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07e55c8383f1850418b1a91b74709c0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thrustPower: 1000
-  rotationValue: 50
-  engineSound: {fileID: 8300000, guid: 71eecceb0da08b242a1bf14dcc000339, type: 3}
-  audioFadeSpeed: 4
-  mainEngineParticles: {fileID: 1778937396473755001}
-  leftBoosterParticles: {fileID: 5799703044682907444}
-  rightBoosterParticles: {fileID: 5288279378495716613}
 --- !u!82 &555574448
 AudioSource:
   m_ObjectHideFlags: 0
@@ -20399,7 +20382,7 @@ AudioSource:
   m_GameObject: {fileID: 6419463909349746538}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6116604189119773669, guid: a998b58b3afb4114098273d5437a900e, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -20486,23 +20469,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &555574455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6419463909349746538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8935fe4fd1677543afddbc48f1b7a76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneLoadingDelay: 1
-  finishClip: {fileID: 8300000, guid: a279f3edbd61c534783fa943dcedf88a, type: 3}
-  crashClip: {fileID: 8300000, guid: 33c36c3cbff20cd43bad4fd93840f3c5, type: 3}
-  finishParticles: {fileID: 77156371522484011}
-  crashParticles: {fileID: 5413369720851218691}
 --- !u!65 &5564339534184456869
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20516,6 +20482,71 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 2.5500822, z: 0.7}
   m_Center: {x: 0, y: 0.61, z: 0}
+--- !u!114 &1109803981894459478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6419463909349746538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8935fe4fd1677543afddbc48f1b7a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneLoadingDelay: 1
+--- !u!114 &6167032390003711458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6419463909349746538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e55c8383f1850418b1a91b74709c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionHandler: {fileID: 1109803981894459478}
+  thrustPower: 700
+  rotationValue: 30
+--- !u!114 &460303288958450350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6419463909349746538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7e5014fc3514613a7105c32f03474d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rocketCollisionHandler: {fileID: 1109803981894459478}
+  rocketMovement: {fileID: 6167032390003711458}
+  mainEngineParticles: {fileID: 1778937396473755001}
+  leftBoosterParticles: {fileID: 5799703044682907444}
+  rightBoosterParticles: {fileID: 5288279378495716613}
+  finishParticles: {fileID: 77156371522484011}
+  crashParticles: {fileID: 5413369720851218691}
+--- !u!114 &3798337048093755367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6419463909349746538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d38cc5ad0d4b24816914e61c14c994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rocketCollisionHandler: {fileID: 1109803981894459478}
+  rocketMovement: {fileID: 6167032390003711458}
+  engineSound: {fileID: 8300000, guid: 71eecceb0da08b242a1bf14dcc000339, type: 3}
+  finishClip: {fileID: 8300000, guid: a279f3edbd61c534783fa943dcedf88a, type: 3}
+  crashClip: {fileID: 8300000, guid: 33c36c3cbff20cd43bad4fd93840f3c5, type: 3}
+  audioFadeSpeed: 5
 --- !u!1 &7221153119043288938
 GameObject:
   m_ObjectHideFlags: 0

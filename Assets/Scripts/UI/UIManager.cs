@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
                 }
         }
 
-        private void GoToPage(int pageIndex)
+        public void GoToPage(int pageIndex)
         {
                 if (pageIndex < pages.Count && pages[pageIndex] != null)
                 {
@@ -73,7 +73,7 @@ public class UIManager : MonoBehaviour
                 }      
         }
 
-        private void SetActiveAllPages(bool state)
+        public void SetActiveAllPages(bool state)
         { 
                 if (pages != null)
                 {
